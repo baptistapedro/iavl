@@ -14,8 +14,9 @@ ADD . /iavl
 WORKDIR /iavl
 
 # package myfuzz
-ADD harnesses/* ./fuzzers/
+ADD harnesses/fuzz.go ./fuzzers/
 WORKDIR ./fuzzers/
+RUN go mod init myfuzz
 RUN go install github.com/dvyukov/go-fuzz/go-fuzz@latest github.com/dvyukov/go-fuzz/go-fuzz-build@latest
 ENV GO111MODULE=off
 RUN go get github.com/cosmos/iavl
