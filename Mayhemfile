@@ -1,0 +1,6 @@
+project: cosmos-iavl
+target: cosmos-iavl
+
+cmds:
+  - cmd: /fuzz_deserialize_node
+    env: {}
